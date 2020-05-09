@@ -54,6 +54,11 @@ span.psw {
   padding-top: 16px;
 }
 
+span.psw1 {
+  float: center;
+  padding-top: 16px;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
@@ -84,13 +89,13 @@ span.psw {
         
     <button type="submit">Login</button>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me </label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
+    <button type="button" class="cancelbtn" onclick="window.location.href='Index.html'">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="psw1">You don't have an account? <a href="signup.html">Sign up Here</a></span>
   </div>
 </form>
 
