@@ -24,6 +24,8 @@ services:
       - backend
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
 networks:
   frontend:
   backend:
