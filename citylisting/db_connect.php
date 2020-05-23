@@ -23,3 +23,16 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 */
+
+function dbConnect($db="") {
+  global $host, $user, $pass;
+   
+  $dbcnx = @mysql_connect($host, $user, $pass)
+  or die("The site database appears to be down.");
+   
+  if ($db!="" and !@mysql_select_db($db))
+  die("The site database is unavailable.");
+   
+  return $dbcnx;
+  }
+  ?>
