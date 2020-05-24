@@ -6,10 +6,28 @@ USE myDb;
 
 CREATE TABLE `Person` (
 	`id_user` INT unsigned NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(50),
-	`email` VARCHAR(50),
-	`password` CHAR(64), 
+	`name` VARCHAR(50) NOT NULL,
+	`email` VARCHAR(50) NOT NULL,
+	`password` CHAR(64) NOT NULL, 
 	PRIMARY KEY (`id_user`)
+);
+
+CREATE TABLE `Location` (
+	`id_location` INT unsigned NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(50) NOT NULL,
+	`price` DOUBLE NOT NULL,
+	`description` CHAR(64) NOT NULL, 
+	PRIMARY KEY (`id_location`)
+);
+
+
+
+CREATE TABLE `Tickets` (
+	`id_ticket` INT unsigned NOT NULL AUTO_INCREMENT,
+	`id_user` INT unsigned NOT NULL,
+	`id_location` INT unsigned NOT NULL,
+	`paid` DOUBLE NOT NULL,
+	PRIMARY KEY (`id_ticket`)
 );
 #-- $x=hash('sha256', $password . 'decamp');
 
@@ -20,3 +38,10 @@ INSERT INTO `Person` (`name`, `email`, `password`) VALUES
 #-- 123456AWAS
 ('Bob_Andrew', 'bobby@example.com','fb0017e335ec40093ebae6a35097d0adb8aca1051fc22479b6ff502c91775976'); 
 #-- bobbyAWAS
+
+
+INSERT INTO `Location` (`name`, `price`, `description`) VALUES
+('Rome', 199 , 'Wonderful place to visit!'),
+('Paris', 249 , 'The city of love.'),
+('Nepal', 279 , 'Clean air and the best mountain views.'); 
+

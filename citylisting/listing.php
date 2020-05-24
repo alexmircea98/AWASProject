@@ -1,4 +1,7 @@
-<?php include 'accesscontrol.php'; ?>
+<?php 
+include_once 'accesscontrol.php'; 
+include_once 'common.php';
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -80,120 +83,7 @@
                         <div class="listing-details-area">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-6 ">
-                                        <div class="single-listing mb-30">
-                                            <div class="list-img">
-                                                <img src="assets/img/gallery/list1.png" alt="">
-                                                <!-- <span>Open</span> -->
-                                            </div>
-                                            <div class="list-caption">
-                                                <span><a href="display.php?loc=rome" >Open</a></span>
-                                                <h3>Saintmartine</h3>
-                                                <p>700/D, Kings road, Green lane, 85/ London</p>
-                                                <div class="list-footer">
-                                                    <ul>
-                                                        <li>+10 278 367 9823</li>
-                                                        <li>contact@midnight.com</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 ">
-                                        <div class="single-listing mb-30">
-                                            <div class="list-img">
-                                                <img src="assets/img/gallery/list2.png" alt="">
-                                                <!-- <span>Open</span> -->
-                                            </div>
-                                            <div class="list-caption">
-                                                <span>Open</span>
-                                                 <h3><a href="listing_details.html">Saintmartine</a></h3>
-                                                <p>700/D, Kings road, Green lane, 85/ London</p>
-                                                <div class="list-footer">
-                                                    <ul>
-                                                        <li>+10 278 367 9823</li>
-                                                        <li>contact@midnight.com</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 ">
-                                        <div class="single-listing mb-30">
-                                            <div class="list-img">
-                                                <img src="assets/img/gallery/list3.png" alt="">
-                                                <!-- <span>Open</span> -->
-                                            </div>
-                                            <div class="list-caption">
-                                                <span>Open</span>
-                                                 <h3><a href="listing_details.html">Saintmartine</a></h3>
-                                                <p>700/D, Kings road, Green lane, 85/ London</p>
-                                                <div class="list-footer">
-                                                    <ul>
-                                                        <li>+10 278 367 9823</li>
-                                                        <li>contact@midnight.com</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 ">
-                                        <div class="single-listing mb-30">
-                                            <div class="list-img">
-                                                <img src="assets/img/gallery/list4.png" alt="">
-                                                <!-- <span>Open</span> -->
-                                            </div>
-                                            <div class="list-caption">
-                                                <span>Open</span>
-                                                 <h3><a href="listing_details.html">Saintmartine</a></h3>
-                                                <p>700/D, Kings road, Green lane, 85/ London</p>
-                                                <div class="list-footer">
-                                                    <ul>
-                                                        <li>+10 278 367 9823</li>
-                                                        <li>contact@midnight.com</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 ">
-                                        <div class="single-listing mb-30">
-                                            <div class="list-img">
-                                                <img src="assets/img/gallery/list5.png" alt="">
-                                                <!-- <span>Open</span> -->
-                                            </div>
-                                            <div class="list-caption">
-                                                <span>Open</span>
-                                                 <h3><a href="listing_details.html">Saintmartine</a></h3>
-                                                <p>700/D, Kings road, Green lane, 85/ London</p>
-                                                <div class="list-footer">
-                                                    <ul>
-                                                        <li>+10 278 367 9823</li>
-                                                        <li>contact@midnight.com</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 ">
-                                        <div class="single-listing mb-30">
-                                            <div class="list-img">
-                                                <img src="assets/img/gallery/list6.png" alt="">
-                                                <!-- <span>Open</span> -->
-                                            </div>
-                                            <div class="list-caption">
-                                                <span>Open</span>
-                                                 <h3><a href="listing_details.html">Saintmartine</a></h3>
-                                                <p>700/D, Kings road, Green lane, 85/ London</p>
-                                                <div class="list-footer">
-                                                    <ul>
-                                                        <li>+10 278 367 9823</li>
-                                                        <li>contact@midnight.com</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<?php print_location(); ?>
                                 </div>
                             </div>
                         </div>

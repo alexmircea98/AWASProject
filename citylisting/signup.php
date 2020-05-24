@@ -1,7 +1,7 @@
 <?php // signup.php
-include 'db_connect.php';
-include 'common.php';
-include 'accesscontrol.php';
+include_once 'db_connect.php';
+include_once 'common.php';
+include_once 'accesscontrol.php';
 
 if(isset($_SESSION['user']))
   header("Location: index.php");
