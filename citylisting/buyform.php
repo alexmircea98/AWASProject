@@ -2,20 +2,17 @@
 include 'common.php';
 session_start();
 
-if($_SERVER["REQUEST_METHOD"] == "POST" || true):
-      if(!isset($_SESSION['user']) || !isset($_SESSION['id_location']))
+if($_SERVER["REQUEST_METHOD"] == "POST"):
+      if(!isset($_SESSION['user'],$_SESSION['id_location']))
         header("Location: index.php");
    
 
     if(isset($_POST['upd_price'])):
-    $price=filter_var($_POST['upd_price'], FILTER_VALIDATE_INT);
-    if(!filter_var($_POST['upd_price'], FILTER_VALIDATE_INT)){
-        session_unset(); 
-        session_destroy();
-        error("Internal server error.");
-        header("Location: index.php");
-    }
-
+    $price=filter_var($_POST['upd_price'], FILTER_VALIDATE_FLOAT);
+    if(!filter_var($_POST['upd_price'], FILTER_VALIDATE_FLOAT))
+        hack_attempt();
+    if($price <= 0)
+        hack_attempt();
 
     $query="INSERT INTO Tickets (id_user, id_location, paid) VALUES(?,?,?)"; 
 

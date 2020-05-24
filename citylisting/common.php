@@ -1,6 +1,13 @@
 <?php // common.php
 include_once 'db_connect.php';
 
+function hack_attempt(){
+    session_unset(); 
+    session_destroy();
+    error("Internal server error.");
+    header("Location: index.php");
+}
+
 function print_login(){
   if(!isset($_SESSION['user'])):
   ?>
@@ -97,7 +104,6 @@ if ($result->num_rows > 0) {
             <img src=<?php echo "\"".$row["image"]."\""?> alt="">
         </div>
         <div class="list-caption">
-            <span><a href=<?php echo "\"display.php?loc=" .$row["name"] . "\""?> >Open</a></span>
             <h3><?php echo $row["name"]?></h3>
             <p><?php echo $row["description"]?></p>
             <p>Costed: <?php echo $row["paid"]?> </p>
@@ -110,8 +116,6 @@ if ($result->num_rows > 0) {
 
 
   }
-} else {
-  error("Internal error: Location database empty.");
 }
 
 }
@@ -143,7 +147,7 @@ function comments($loc=""){
                                         <h5>
                                             <a href="#"><?php echo $row["subject"]?></a>
                                         </h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
+                                        
                                         </div>
                                     </div>
                                 </div>

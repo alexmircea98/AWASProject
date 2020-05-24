@@ -1,6 +1,9 @@
 <?php 
 include_once 'accesscontrol.php'; 
 include_once 'common.php';
+if(!isset($_SESSION['user']))
+    header("Location: listing.php");
+
 ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
