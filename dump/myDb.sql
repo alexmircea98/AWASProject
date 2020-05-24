@@ -6,7 +6,7 @@ USE myDb;
 
 CREATE TABLE `Person` (
 	`id_user` INT unsigned NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(25),
+	`name` VARCHAR(50),
 	`email` VARCHAR(50),
 	`password` CHAR(64), 
 	PRIMARY KEY (`id_user`)

@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 } 
 
 
-
+/*
 //Test database:
 $sql = "SELECT id_user, name,email, password FROM Person";
 $result = $conn->query($sql);
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
   }
 } else {
   echo "0 results";
-}
+}*/
 
 
 function dbConnect($db="") {
