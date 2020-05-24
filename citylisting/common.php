@@ -116,3 +116,47 @@ if ($result->num_rows > 0) {
 
 }
 
+function comments($loc=""){
+
+  global $conn;
+
+  $sql = "SELECT M.* FROM Message M INNER JOIN Location L ON  M.name_location = L.name Where L.name = '$loc';";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+  ?>
+                        <div class="comment-list" align-items-center >
+                          <div class="single-comment justify-content-between d-flex">
+                            <div class="user justify-content-between d-flex">
+                                <div class="thumb">
+                                    <img src="assets/img/comment/comment_1.png" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="comment">
+                                    <?php echo $row["description"]?>
+                                    </p>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                        <h5>
+                                            <a href="#"><?php echo $row["subject"]?></a>
+                                        </h5>
+                                        <p class="date">December 4, 2017 at 3:12 pm </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+  <?php
+
+
+    }
+  } else {
+    error("Internal error: Location database empty.");
+  }
+
+}
