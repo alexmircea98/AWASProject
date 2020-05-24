@@ -1,5 +1,5 @@
 <?php
-include 'common.php';
+include_once 'common.php';
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "GET"):
@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"):
         error("Invalid location");
 
     $row = $result->fetch_assoc();
+    $_SESSION['id_location']=$row['id_location'];
     
     ?>
 

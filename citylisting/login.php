@@ -4,7 +4,7 @@ include_once 'db_connect.php';
 include_once 'accesscontrol.php';
 
 if(isset($_SESSION['user']))
-	header("Location: index.php");
+  header("Location: index.php");
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"):
@@ -26,19 +26,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"):
 
     $query= 'SELECT name,password FROM Person WHERE name = ? AND password = ?';
     if ($stmt = $conn->prepare($query)) {
-    	$pass_hash=hash('sha256', $password . 'decamp');
-      	$stmt->bind_param("ss", $name,$pass_hash);
-      	$stmt->execute();
-      	$stmt->store_result();
-      	if ($stmt->num_rows == 0) {
-       	   error('Wrong username/passowrd combination.');
-     	}
+      $pass_hash=hash('sha256', $password . 'decamp');
+        $stmt->bind_param("ss", $name,$pass_hash);
+        $stmt->execute();
+        $stmt->store_result();
+        if ($stmt->num_rows == 0) {
+           error('Wrong username/passowrd combination.');
+      }
       $stmt->close();
     } else error('Unexpecter error.');
 
     // login sucessful
     session_regenerate_id(TRUE);
     $_SESSION['user']=$name;
+
+    $sql = "SELECT id_user FROM Person WHERE name = \"".$name."\"";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0){
+    $row = $result->fetch_assoc();
+    $_SESSION["id_user"]=$row["id_user"];
+    } else error("Internal server error.");
+
+
     header("Location: index.php");
 else:
 ?>

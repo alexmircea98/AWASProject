@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $stmt->bind_param("sss",$name ,$email,$pass_hash);
       $stmt->execute();
       $stmt->close();
-    } else error($conn->prepare($query))
+    } else error("Internal server error.")
 ?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

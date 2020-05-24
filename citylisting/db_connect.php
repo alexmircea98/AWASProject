@@ -9,6 +9,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+/*
+$sql = "SELECT id_ticket, id_user, id_location,paid FROM Tickets";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id_ticket"]. " - id_user: " . $row["id_user"].  " - id_location: " . $row["id_location"]. " - paid: " . $row["paid"]."<br>";
+  }
+} else {
+  echo "0 results";
+}
+*/
 
 /*
 //Test database:

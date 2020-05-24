@@ -1,4 +1,7 @@
-<?php include_once 'accesscontrol.php'; ?>
+<?php 
+include_once 'accesscontrol.php';
+include_once 'common.php';
+ ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
