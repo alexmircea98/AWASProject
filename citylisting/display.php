@@ -1,3 +1,10 @@
+<?php
+include 'common.php';
+session_start();
+
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -35,10 +42,8 @@
                                             <li><a href="index.php">Home</a></li>
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <li class="add-list"><a href="listing.html"><i class="ti-plus"></i> Book a Flight</a></li>
-                                            <li class="login"><a href="login.php">
-                                                <i class="ti-user"></i> Sign in or Register</a>
-                                            </li>
+                                            <li class="add-list"><a href="listing.php"><i class="ti-plus"></i> Book a Flight</a></li>
+<?php print_login(); ?>
                                         </ul>
                                     </nav>
                                 </div>
@@ -75,12 +80,22 @@
                         <h2 class="contact-title">DATE:</h2>
                         <h2 class="contact-title">PRICE:</h2>
                     </div>
+<?php 
+if(isset($_SESSION['user'])):?>         
                     <div class="form-group mt-3">
                         <button type="submit" class="button button-contactForm boxed-btn">BUY</button>
+<?php else: ?>
+                    <h5> Login to buy this ticket. </h5>
+<?php endif; ?>
                     </div>
                 </div>
             </div>
         </section>
+
+
+<?php 
+if(isset($_SESSION['user'])):?>
+
         <section class="contact-section">
             <div class="container">
                 <div class="row">
@@ -117,7 +132,10 @@
             </div>
         </section>
         <!-- ================ contact section end ================= -->
-
+<?php
+else:?>
+<center> Please login in order to post a comment. </center> </br>
+<?php endif ?>
     </main>
 </body>
     

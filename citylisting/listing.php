@@ -1,3 +1,4 @@
+<?php include 'accesscontrol.php'; ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -34,9 +35,7 @@
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li class="add-list"><a href="listing.html"><i class="ti-plus"></i> Book a Flight</a></li>
-                                            <li class="login"><a href="login.php">
-                                                <i class="ti-user"></i> Sign in or Register</a>
-                                            </li>
+<?php print_login(); ?>
                                         </ul>
                                     </nav>
                                 </div>
@@ -88,7 +87,7 @@
                                                 <!-- <span>Open</span> -->
                                             </div>
                                             <div class="list-caption">
-                                                <span><a href="display.html?loc=rome" >Open</a></span>
+                                                <span><a href="display.php?loc=rome" >Open</a></span>
                                                 <h3>Saintmartine</h3>
                                                 <p>700/D, Kings road, Green lane, 85/ London</p>
                                                 <div class="list-footer">

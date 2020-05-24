@@ -35,15 +35,8 @@
                                             <li><a href="index.php">Home</a></li>
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <li class="add-list"><a href="listing.html"><i class="ti-plus"></i> Book a Flight</a></li>
-<?php 
-if(!isset($_SESSION['user'])): ?>
-
-                                            <li class="login"><a href="login.php">
-                                                <i class="ti-user"></i> Sign in or Register</a>
-<?php else: ?>
-                                            <li><a href="logout.php">Log out</a></li>
-<?php endif ?>
+                                            <li class="add-list"><a href="listing.php"><i class="ti-plus"></i> Book a Flight</a></li>
+<?php print_login(); ?>
                                             </li>
                                         </ul>
                                     </nav>
@@ -96,7 +89,7 @@ if(!isset($_SESSION['user'])): ?>
                             </div>
                             <div class="location-details">
                                 <p>New York</p>
-                                <a href="listing.html" class="location-btn">65 <i class="ti-plus"></i> Location</a>
+                                <a href="listing.php" class="location-btn">65 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
                     </div>
@@ -107,7 +100,7 @@ if(!isset($_SESSION['user'])): ?>
                             </div>
                             <div class="location-details">
                                 <p>Paris</p>
-                                <a href="listing.html" class="location-btn">60 <i class="ti-plus"></i> Location</a>
+                                <a href="listing.php" class="location-btn">60 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
                     </div>
@@ -118,7 +111,7 @@ if(!isset($_SESSION['user'])): ?>
                             </div>
                             <div class="location-details">
                                 <p>Rome</p>
-                                <a href="listing.html" class="location-btn">50 <i class="ti-plus"></i> Location</a>
+                                <a href="listing.php" class="location-btn">50 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
                     </div>
@@ -129,7 +122,7 @@ if(!isset($_SESSION['user'])): ?>
                             </div>
                             <div class="location-details">
                                 <p>Italy</p>
-                                <a href="listing.html" class="location-btn">28 <i class="ti-plus"></i> Location</a>
+                                <a href="listing.php" class="location-btn">28 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
                     </div>
@@ -140,7 +133,7 @@ if(!isset($_SESSION['user'])): ?>
                             </div>
                             <div class="location-details">
                                 <p>Nepal</p>
-                                <a href="listing.html" class="location-btn">99 <i class="ti-plus"></i> Location</a>
+                                <a href="listing.php" class="location-btn">99 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +144,7 @@ if(!isset($_SESSION['user'])): ?>
                             </div>
                             <div class="location-details">
                                 <p>indonesia</p>
-                                <a href="listing.html" class="location-btn">78 <i class="ti-plus"></i> Location</a>
+                                <a href="listing.php" class="location-btn">78 <i class="ti-plus"></i> Location</a>
                             </div>
                         </div>
                     </div>
@@ -159,7 +152,7 @@ if(!isset($_SESSION['user'])): ?>
                 <!-- More Btn -->
                 <div class="row justify-content-center">
                     <div class="room-btn pt-20">
-                        <a href="listing.html" class="btn view-btn1">View All Places</a>
+                        <a href="listing.php" class="btn view-btn1">View All Places</a>
                     </div>
                 </div>
             </div>
