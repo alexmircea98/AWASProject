@@ -35,7 +35,7 @@ include_once 'common.php';
                                     <nav>
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="index.php">Home</a></li>
-                                            <li class="add-list"><a href="listing.html"><i class="ti-plus"></i> Book a Flight</a></li>
+                                            <li class="add-list"><a href="listing.php"><i class="ti-plus"></i> Book a Flight</a></li>
                                                 <?php print_login(); ?>
                                         </ul>
                                     </nav>
