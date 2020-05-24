@@ -36,6 +36,7 @@ function CalculateItemsValue() {
     itemID = document.getElementById("no_tickets");
     total = total + parseInt(itemID.value) * tprice;
     document.getElementById("price").innerHTML = "PRICE: $" + total;
+    document.getElementById("u_price").value = total;
      
 }
 </script>
@@ -107,7 +108,10 @@ function CalculateItemsValue() {
     <?php 
     if(isset($_SESSION['user'])):?>         
                         <div class="form-group mt-3">
-                            <button type="submit" class="button button-contactForm boxed-btn">BUY</button>
+                            <form name="myform" action="buyform.php" method="POST">
+                                <input type="hidden" name="upd_price" value=<?php echo $row['price'];?> id ="u_price">
+                                <button type="submit" class="button button-contactForm boxed-btn">BUY</button>
+                            </form>
     <?php else: ?>
                         <h5> Login to buy this ticket. </h5>
     <?php endif; ?>
@@ -119,7 +123,20 @@ function CalculateItemsValue() {
 
     <?php 
     if(isset($_SESSION['user'])):?>
-
+    <section class="blog_area single-post-area section-padding">
+        <div class="container">
+            <div class="row">
+               <div class="col-lg-8 posts-list">
+                    <div class="comments-area" align-items-center >
+                        <h4>Comments</h4>
+                        <!-- //add comm function here -->
+                        <?php comments($row['name']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+            <!-- ------------------------------endofCommentss------------------------------------ -->
             <section class="contact-section">
                 <div class="container">
                     <div class="row">

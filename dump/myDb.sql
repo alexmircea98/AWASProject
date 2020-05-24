@@ -34,8 +34,8 @@ CREATE TABLE `Tickets` (
 
 CREATE TABLE `Message` (
 	`id_message` INT unsigned NOT NULL AUTO_INCREMENT,
-	`subject` INT unsigned NOT NULL,
-	`id_location` INT unsigned NOT NULL,
+	`subject` VARCHAR(64) NOT NULL,
+	`name_location` VARCHAR(50) NOT NULL,
 	`description` VARCHAR(64) NOT NULL, 
 	PRIMARY KEY (`id_message`)
 ); 
@@ -55,3 +55,7 @@ INSERT INTO `Location` (`name`, `price`, `description`, `image`) VALUES
 ('Paris', 249 , 'The city of love.', 'assets/img/gallery/location2.png'),
 ('Nepal', 279 , 'Clean air and the best mountain views.', 'assets/img/gallery/location5.png'); 
 
+INSERT INTO `Message` (`Subject`, `name_location`, `description`) VALUES
+('Wonderfull', 'Rome', 'Wonderful place to visit!'),
+('Wonderfull', 'Paris', 'The city of love.'),
+('Wonderfull', 'Nepal', 'Clean air and the best mountain views.'); 
