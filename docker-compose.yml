@@ -15,7 +15,7 @@ services:
       - frontend
       - backend
     ports:
-      - "8080:80"
+      - "8000:80"
     volumes:
       - ./citylisting/:/var/www/html/
   mysql:

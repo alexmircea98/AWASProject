@@ -36,9 +36,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"):
       $stmt->close();
     } else error('Unexpecter error.');
 
-	session_destroy();
     // login sucessful
-    session_start();
+    session_regenerate_id(TRUE);
     $_SESSION['user']=$name;
     header("Location: index.php");
 else:
