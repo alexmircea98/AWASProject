@@ -36,7 +36,7 @@ CREATE TABLE `Message` (
 	`id_message` INT unsigned NOT NULL AUTO_INCREMENT,
 	`subject` VARCHAR(64) NOT NULL,
 	`name_location` VARCHAR(50) NOT NULL,
-	`description` VARCHAR(64) NOT NULL, 
+	`description` TEXT NOT NULL, 
 	PRIMARY KEY (`id_message`)
 ); 
 #--Work in progress
