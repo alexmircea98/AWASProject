@@ -36,8 +36,6 @@ include_once 'common.php';
                                     <nav>
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="index.php">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
                                             <li class="add-list"><a href="listing.php"><i class="ti-plus"></i> Book a Flight</a></li>
 <?php print_login(); ?>
                                             </li>
@@ -151,7 +149,7 @@ include_once 'common.php';
                             </div>
                             <div class="services-cap">
                                 <h5><a href="#">1. Choose a Location</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                <p>Pick one of our unique new listed loctions.</p>
                             </div>
                             <!-- Shpape -->
                             <img class="shape1 d-none d-lg-block" src="assets/img/icon/serices1.png" alt="">
@@ -164,7 +162,7 @@ include_once 'common.php';
                             </div>
                             <div class="services-cap">
                                 <h5><a href="#">2. Pick a date</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                <p>Although for the moment our dates are fixed.</p>
                             </div>
                             <img class="shape2 d-none d-lg-block" src="assets/img/icon/serices2.png" alt="">
                         </div>
@@ -175,8 +173,9 @@ include_once 'common.php';
                                 <span class="flaticon-respect"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="#">3.Create account book the flight</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                <h5><a href="#">3.Create account to book the flight</a></h5>
+                                <p>Create a new account to enjoy all the benefits.</p>
+                                <p>You can be sure that you are safe with us.</p>
                             </div>
                         </div>
                     </div>
