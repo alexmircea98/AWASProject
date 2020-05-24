@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" || true):
                                             <li><a href="index.php">Home</a></li>
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <li class="add-list"><a href="listing.html"><i class="ti-plus"></i> Book a Flight</a></li>
+                                            <li class="add-list"><a href="listing.php"><i class="ti-plus"></i> Book a Flight</a></li>
                                             <?php print_login(); ?>
                                         </ul>
                                     </nav>
