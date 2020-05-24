@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"):
         error("Invalid location");
 
     $row = $result->fetch_assoc();
-
+    
     ?>
 
     <!doctype html>
@@ -29,7 +29,16 @@ if($_SERVER["REQUEST_METHOD"] == "GET"):
             <link rel="stylesheet" href="assets/css/flaticon.css">
             <link rel="stylesheet" href="assets/css/style.css">
     </head>
-
+<script>
+function CalculateItemsValue() {
+    var total = 0;
+    const tprice = parseInt("<?php echo $row['price'];?>");
+    itemID = document.getElementById("no_tickets");
+    total = total + parseInt(itemID.value) * tprice;
+    document.getElementById("price").innerHTML = "PRICE: $" + total;
+     
+}
+</script>
     <body>
         <header>
             <!-- Header Start -->
@@ -55,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"):
                                                 <li><a href="about.html">About</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
                                                 <li class="add-list"><a href="listing.php"><i class="ti-plus"></i> Book a Flight</a></li>
-    <?php print_login(); ?>
+                                                    <?php print_login(); ?>
                                             </ul>
                                         </nav>
                                     </div>
@@ -90,8 +99,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"):
                         <div class="col-12">
                             <h2 class="contact-title">Ticket to: <?php echo $row['name'];?></h2> 
                             <?php echo $row['description'];?> </br>
-                            <h2 class="contact-title">DATE:</h2>
-                            <h2 class="contact-title">PRICE:<?php echo $row['price'];?></h2>
+                            <h2 class="contact-title">DATE: <?php echo date("Y/m/d") . "<br>";?></h2>
+                            <h2 id="price" class="contact-title">PRICE:<?php echo $row['price'];?></h2>
+                            <!-- <h2 id="price" class="contact-title">PRICE:<?php echo $row['price'];?></h2> -->
+                            <input type="number" id="no_tickets" name="no_tickets" oninput="CalculateItemsValue()" value="1" min="1" max="10">
                         </div>
     <?php 
     if(isset($_SESSION['user'])):?>         

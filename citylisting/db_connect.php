@@ -24,16 +24,30 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }*/
 
+/*
+//Test Location database:
+$sql = "SELECT id_location, name, price, description, image FROM Location";
+$result = $conn->query($sql);
 
-function dbConnect($db="") {
-  global $host, $user, $pass;
-   
-  $dbcnx = @mysql_connect($host, $user, $pass)
-  or die("The site database appears to be down.");
-   
-  if ($db!="" and !@mysql_select_db($db))
-  die("The site database is unavailable.");
-   
-  return $dbcnx;
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id_location"]. " - Name: " . $row["name"].  " - price: " . $row["price"]. " - Desc: " . $row["description"].  " - Img: " . $row["image"]. "<br>";
   }
+} else {
+  echo "0 results";
+}
+*/
+
+// function dbConnect($db="") {
+//   global $host, $user, $pass;
+   
+//   $dbcnx = @mysql_connect($host, $user, $pass)
+//   or die("The site database appears to be down.");
+   
+//   if ($db!="" and !@mysql_select_db($db))
+//   die("The site database is unavailable.");
+   
+//   return $dbcnx;
+//   }
   ?>

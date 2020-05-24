@@ -38,7 +38,7 @@ include_once 'common.php';
                                             <li><a href="about.html">About</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li class="add-list"><a href="listing.html"><i class="ti-plus"></i> Book a Flight</a></li>
-<?php print_login(); ?>
+                                                <?php print_login(); ?>
                                         </ul>
                                     </nav>
                                 </div>
@@ -83,7 +83,7 @@ include_once 'common.php';
                         <div class="listing-details-area">
                             <div class="container">
                                 <div class="row">
-<?php print_location(); ?>
+                                    <?php print_location(); ?>
                                 </div>
                             </div>
                         </div>

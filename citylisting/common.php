@@ -55,8 +55,7 @@ if ($result->num_rows > 0) {
 <div class="col-lg-6 ">
     <div class="single-listing mb-30">
         <div class="list-img">
-            <img src="assets/img/gallery/list1.png" alt="">
-            <!-- <span>Open</span> -->
+            <img src=<?php echo "\"".$row["image"]."\""?> alt="">
         </div>
         <div class="list-caption">
             <span><a href=<?php echo "\"display.php?loc=" .$row["name"] . "\""?> >Open</a></span>

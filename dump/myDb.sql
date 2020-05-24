@@ -17,6 +17,7 @@ CREATE TABLE `Location` (
 	`name` VARCHAR(50) NOT NULL,
 	`price` DOUBLE NOT NULL,
 	`description` CHAR(64) NOT NULL, 
+	`image` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`id_location`)
 );
 
@@ -31,6 +32,15 @@ CREATE TABLE `Tickets` (
 );
 #-- $x=hash('sha256', $password . 'decamp');
 
+CREATE TABLE `Message` (
+	`id_message` INT unsigned NOT NULL AUTO_INCREMENT,
+	`subject` INT unsigned NOT NULL,
+	`id_location` INT unsigned NOT NULL,
+	`description` VARCHAR(64) NOT NULL, 
+	PRIMARY KEY (`id_message`)
+); 
+#--Work in progress
+
 INSERT INTO `Person` (`name`, `email`, `password`) VALUES
 ('Admin', 'admin@example.com', 'e155e529d1a57ae30f0e42dd9f885534da88126da980a67f3e646b13c52e7848'), 
 #-- adminAWAS
@@ -40,8 +50,8 @@ INSERT INTO `Person` (`name`, `email`, `password`) VALUES
 #-- bobbyAWAS
 
 
-INSERT INTO `Location` (`name`, `price`, `description`) VALUES
-('Rome', 199 , 'Wonderful place to visit!'),
-('Paris', 249 , 'The city of love.'),
-('Nepal', 279 , 'Clean air and the best mountain views.'); 
+INSERT INTO `Location` (`name`, `price`, `description`, `image`) VALUES
+('Rome', 199 , 'Wonderful place to visit!', 'assets/img/gallery/list1.png'),
+('Paris', 249 , 'The city of love.', 'assets/img/gallery/location2.png'),
+('Nepal', 279 , 'Clean air and the best mountain views.', 'assets/img/gallery/location5.png'); 
 
