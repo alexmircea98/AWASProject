@@ -10,20 +10,20 @@ if ($conn->connect_error) {
 } 
 
 
-/*
+
 //Test database:
-$sql = "SELECT id, name,email, password FROM Person";
+$sql = "SELECT id_user, name,email, password FROM Person";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["name"].  " - Email: " . $row["email"]. " - Password: " . $row["password"]."<br>";
+    echo "id: " . $row["id_user"]. " - Name: " . $row["name"].  " - Email: " . $row["email"]. " - Password: " . $row["password"]."<br>";
   }
 } else {
   echo "0 results";
 }
-*/
+
 
 function dbConnect($db="") {
   global $host, $user, $pass;

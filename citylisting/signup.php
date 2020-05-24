@@ -7,7 +7,7 @@ if (!isset($_POST['submitok'])):
     echo " not goof ";
 else:
 // Process signup submission
-dbConnect('myDb');
+//dbConnect('myDb');
 
 if ($_POST['email']=='' or $_POST['name']==''
 or $_POST['psw']=='' or $_POST['psw-repeat']=='') {
@@ -21,28 +21,28 @@ error('Passwords does not match.\n'.
 }
 
  // Check for existing user with the new id
- $sql = "SELECT COUNT(*) FROM user WHERE Person = '$_POST[name]'";
- $result = mysql_query($sql);
- if (!$result) {
- error('A database error occurred in processing your '.
- 'submission.\nIf this error persists, please '.
- 'contact you@notme.com.');
- }
- if (@mysql_result($result,0,0)>0) {
+ $sql = "SELECT * FROM Person WHERE name = '$_POST[name]'";
+ $result = $conn->query($sql);
+ 
+ if ($result->num_rows > 0) {
  error('A user already exists with your chosen userid.\n'.
  'Please try another.');
  }
 
- $x=hash('sha256', $_POST[psw] . 'decamp');
 
- $sql = "INSERT INTO Person SET
-user = '$_POST[name]',
-email = '$_POST[email]',
-password = '$x'";
-if (!mysql_query($sql))
-error('A database error occurred in processing your '.
-'submission.\nIf this error persists, please '.
-'contact you@example.com.');
+ $n=$_POST['name'];
+ $e=$_POST['email'];
+ $x=hash('sha256', $_POST['psw'] . 'decamp');
+
+ $sql = "INSERT INTO Person (name, email, password)
+ VALUES ('$n','$e','$x')";
+
+//  $sql = "INSERT INTO Person VALUE
+// name = '$_POST[name]',
+// email = '$_POST[email]',
+// password = '$x'";
+$conn->query($sql);
+
 ?>
 
 
@@ -64,3 +64,4 @@ page, and enter your user and password.</p>
 <?php
 endif;
 ?>
+// https://www.sitepoint.com/users-php-sessions-mysql/

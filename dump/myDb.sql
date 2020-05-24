@@ -5,11 +5,11 @@ USE myDb;
 #-- EXAMPLE OF USAGE:
 
 CREATE TABLE `Person` (
-	`id` INT unsigned NOT NULL AUTO_INCREMENT,
+	`id_user` INT unsigned NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(25),
 	`email` VARCHAR(50),
 	`password` CHAR(64), 
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id_user`)
 );
 #-- $x=hash('sha256', $password . 'decamp');
 
