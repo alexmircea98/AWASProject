@@ -1,6 +1,9 @@
 # AWASProject
 Final project for Applied WEB application Security course
 
+Made by: 
+Bogatu Mihai-Alexandru, 
+Mircea Alexandru-Alin
 
 To start the server:
 sudo docker-compose up
